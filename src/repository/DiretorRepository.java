@@ -1,13 +1,15 @@
 package repository;
 
 import util.ConnectionManager;
-
-import javax.sql.RowSetReader;
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 public class DiretorRepository {
 
-    public static void findAll() throws SQLException, ClassNotFoundException{
+    public static void findAll() throws SQLException, ClassNotFoundException {
+
         Connection conn = ConnectionManager.getConnection();
         PreparedStatement statement = conn.prepareStatement("select * from diretor ");
         ResultSet resultSet =  null;
